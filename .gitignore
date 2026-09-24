@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+*token*
+*credentials*
+.ipynb_checkpoints/
+__pycache__/
+outputs/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+.DS_Store
