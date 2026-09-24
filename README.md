@@ -45,27 +45,6 @@ The project report describes exploratory comparisons of guided and free-form int
 
 The notebook installs Transformers, Accelerate, bitsandbytes, Safetensors, Diffusers, and OpenCLIP. Its configured models are `unsloth/Qwen2.5-7B-Instruct-bnb-4bit`, `stabilityai/stable-diffusion-xl-base-1.0`, and OpenCLIP `ViT-B-32` with `openai` weights. Model weights are downloaded separately and remain subject to their respective terms.
 
-## Verification
-
-The current notebook was smoke-tested on a Google Colab Tesla T4 runtime in September 2026. The test covered loading the 4-bit Qwen model, producing structured JSON in free-form mode, generating three intent variants, loading OpenCLIP, loading SDXL, and generating a 512×512 image. The image smoke test used seed 42, eight inference steps, and guidance 5.5.
-
-For a fast test that does not download models or require a GPU:
-
-```bash
-python tests/test_core.py
-```
-
-This checks JSON extraction with braces inside quoted strings, exact preservation of locked fields, and validation of numeric and image-size inputs.
-
-## Limitations and verification
-
-- GPU memory requirements depend on the runtime; SDXL and the language model can exhaust available memory.
-- Dependencies use minimum versions rather than a fully locked environment.
-- LLM-generated JSON and prompt interpretation can fail.
-- The notebook applies an 80-token prompt cap using the LLM tokenizer; CLIP has a separate text limit and tokenizer.
-- Colab currently emits non-blocking deprecation and model-configuration warnings from Transformers, Diffusers, and OpenCLIP; these do not prevent the verified workflow from running.
-- Notebook outputs and execution metadata are cleared in this repository; the verification above was run in a separate cloud test copy.
-
 ## Attribution
 
 This is a team project by Yinzhi Xie, [Shaowan Liang](https://github.com/shaowanwan), and [Xiaojing Zhao](https://github.com/JOJOZhaoX), published with the team members' consent. Individual implementation ownership is not inferred from author order. No open-source license is granted unless a license file is added later.
