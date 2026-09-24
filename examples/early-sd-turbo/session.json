@@ -1,0 +1,120 @@
+{
+  "session_id": "20260105-204844",
+  "model_llm": "unsloth/Qwen2.5-7B-Instruct-bnb-4bit",
+  "model_img": "stabilityai/sd-turbo",
+  "use_sd_turbo": true,
+  "final_schema": {
+    "subject_scene": "a cute cat with long black fur and big eyes sitting on a soft cushion in a cozy room",
+    "style": "cartoon",
+    "lighting_mood": "soft and warm with gentle shadows",
+    "composition_camera": "cartoon, cel shading, thick outlines, flat colors",
+    "details": "the cat is looking up with a playful expression, surrounded by soft toys",
+    "negative_prompt": "ugly, distorted, low quality"
+  },
+  "final_prompt": "a cute cat with long black fur and big eyes sitting on a soft cushion in a cozy room, cartoon, soft and warm with gentle shadows, cartoon, cel shading, thick outlines, flat colors, the cat is looking up with a playful expression, surrounded by soft toys",
+  "history": [
+    {
+      "stage": "brief",
+      "brief": "A cute cat",
+      "mode": "B"
+    },
+    {
+      "stage": "freeform_details",
+      "extra": "long black fur and big eyes"
+    },
+    {
+      "stage": "choose",
+      "index": 0,
+      "chosen_title": "Cinematic"
+    },
+    {
+      "stage": "critic",
+      "alignment": "High",
+      "comment": "Meets all criteria well",
+      "suggestion": "None needed"
+    },
+    {
+      "stage": "image",
+      "seed": 0,
+      "steps": 1,
+      "path": "preview_seed0_steps1.png",
+      "clip": 0.26829466223716736
+    },
+    {
+      "stage": "refine",
+      "round": 1,
+      "target_key": "style",
+      "feedback": "cartoon",
+      "change_summary": "Changed style from cinematic and dramatic to cartoon",
+      "before": {
+        "subject_scene": "a cute cat with long black fur and big eyes sitting on a soft cushion in a cozy room",
+        "style": "cinematic and dramatic",
+        "lighting_mood": "soft and warm with gentle shadows",
+        "composition_camera": "dramatic low-angle shot to emphasize the cat's cuteness",
+        "details": "the cat is looking up with a playful expression, surrounded by soft toys",
+        "negative_prompt": "ugly, distorted, low quality"
+      },
+      "after": {
+        "subject_scene": "a cute cat with long black fur and big eyes sitting on a soft cushion in a cozy room",
+        "style": "cartoon",
+        "lighting_mood": "soft and warm with gentle shadows",
+        "composition_camera": "dramatic low-angle shot to emphasize the cat's cuteness",
+        "details": "the cat is looking up with a playful expression, surrounded by soft toys",
+        "negative_prompt": "ugly, distorted, low quality"
+      },
+      "critic": {
+        "alignment": "High",
+        "comment": "Meets the brief well",
+        "suggestion": "none"
+      }
+    },
+    {
+      "stage": "image",
+      "seed": 0,
+      "steps": 1,
+      "path": "gen_seed0_steps1.png",
+      "clip": 0.26714062690734863
+    },
+    {
+      "stage": "refine",
+      "round": 2,
+      "target_key": "composition_camera",
+      "feedback": "remove photorealistic/realistic/DSLR/8k terms, keep it cartoon, cel shading, thick outlines, flat colors",
+      "change_summary": "Updated composition_camera to include cartoon style elements",
+      "before": {
+        "subject_scene": "a cute cat with long black fur and big eyes sitting on a soft cushion in a cozy room",
+        "style": "cartoon",
+        "lighting_mood": "soft and warm with gentle shadows",
+        "composition_camera": "dramatic low-angle shot to emphasize the cat's cuteness",
+        "details": "the cat is looking up with a playful expression, surrounded by soft toys",
+        "negative_prompt": "ugly, distorted, low quality"
+      },
+      "after": {
+        "subject_scene": "a cute cat with long black fur and big eyes sitting on a soft cushion in a cozy room",
+        "style": "cartoon",
+        "lighting_mood": "soft and warm with gentle shadows",
+        "composition_camera": "cartoon, cel shading, thick outlines, flat colors",
+        "details": "the cat is looking up with a playful expression, surrounded by soft toys",
+        "negative_prompt": "ugly, distorted, low quality"
+      },
+      "critic": {
+        "alignment": "High",
+        "comment": "Meets the brief well",
+        "suggestion": "None needed"
+      }
+    },
+    {
+      "stage": "image",
+      "seed": 42,
+      "steps": 4,
+      "path": "gen_seed42_steps4.png",
+      "clip": 0.2493761032819748
+    }
+  ],
+  "metrics": {
+    "mode": "B",
+    "refine_rounds": 2,
+    "elapsed_seconds": 2271.1490654945374,
+    "last_clip_score": 0.2493761032819748
+  }
+}
